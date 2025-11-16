@@ -1,5 +1,5 @@
 // /pages/index.js
-// VERSIÓN 3.0 - WhatsApp-Ready
+// VERSIÓN 4.0 - Ajustes Finales de CEO (Logo + Legibilidad + WhatsApp)
 
 import Head from 'next/head';
 import { useState } from 'react';
@@ -53,24 +53,22 @@ export default function Home() {
         {/* --- SECCIÓN HERO --- */}
         <div className="flex flex-col items-center text-center py-20 md:py-32">
           
-          {/* Logo (Más grande, sin título de texto, y con prioridad de carga) */}
+          {/* Logo (Aún más grande: 320px) */}
           <Image 
             src="/logoprincipal.png" 
             alt="EMCOTIC Logo" 
-            width={256}  // Más grande (era 192)
-            height={256} // Asumiendo que es cuadrado, ajusta si no
+            width={320}  // Más grande (era 256)
+            height={320} // Asumiendo que es cuadrado, ajusta si no
             className="mb-12" // Más margen inferior
             priority 
           />
           
-          {/* Título de texto ELIMINADO */}
-
           <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl">
             Sinergia experta en <span className="text-emcotic-blue font-semibold">Gerencia de Proyectos</span>, <span className="text-emcotic-blue font-semibold">Derecho Tecnológico</span> e <span className="text-emcotic-blue font-semibold">Innovación</span>.
           </p>
         </div>
 
-        {/* --- SECCIÓN SERVICIOS --- */}
+        {/* --- SECCIÓN SERVICIOS (Diseño Uniforme) --- */}
         <div className="grid md:grid-cols-3 gap-8 mb-24">
           
           <div className="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2">
@@ -78,9 +76,10 @@ export default function Home() {
             <p className="text-gray-700">Formulación y ejecución de proyectos I+D+i bajo metodologías ágiles y PMI. Maximizamos tu ROI y aseguramos el éxito.</p>
           </div>
           
-          <div className="bg-emcotic-blue p-8 rounded-lg shadow-xl text-white transition-transform duration-300 hover:-translate-y-2">
-            <h3 className="text-2xl font-bold mb-4 text-emcotic-cyan">Consultoría Legal-Tech</h3>
-            <p className="opacity-90">Protegemos tu innovación: Propiedad Intelectual, Contratos y Derecho de Autor. La armadura legal de tus activos digitales.</p>
+          {/* CAMBIO DE LEGIBILIDAD: Ahora es uniforme */}
+          <div className="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2">
+            <h3 className="text-2xl font-bold mb-4 text-emcotic-blue">Consultoría Legal-Tech</h3>
+            <p className="text-gray-700">Protegemos tu innovación: Propiedad Intelectual, Contratos y Derecho de Autor. La armadura legal de tus activos digitales.</p>
           </div>
           
           <div className="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2">
@@ -89,7 +88,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* --- SECCIÓN CONTACTO (Ahora con WhatsApp) --- */}
+        {/* --- SECCIÓN CONTACTO (Con WhatsApp) --- */}
         <div className="bg-white p-8 md:p-12 rounded-lg shadow-2xl max-w-2xl mx-auto mb-20 border border-gray-200">
           <h2 className="text-3xl font-bold mb-6 text-center text-emcotic-blue">Contáctanos</h2>
           <p className="text-gray-600 mb-8 text-center">¿Listo para escalar tu proyecto? Hablemos.</p>
@@ -136,7 +135,6 @@ export default function Home() {
               Enviar por WhatsApp
             </button>
             
-            {/* Ya no necesitamos los mensajes de estado */}
           </form>
         </div>
       </main>
