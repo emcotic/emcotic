@@ -53,7 +53,7 @@ export default function Home() {
 
       <main className="w-full max-w-4xl mx-auto text-center">
         {/* Aquí puedes poner tu logo */}
-        {/* <img src="/logoprincipal.png" alt="EMCOTIC Logo" className="w-48 mx-auto mb-8" /> */}
+        <img src="/logoprincipal.png" alt="EMCOTIC Logo" className="w-48 mx-auto mb-8" />
         
         <h1 className="text-4xl md:text-6xl font-bold text-cyan-400 mb-4">
           EMCOTIC S.A.S
