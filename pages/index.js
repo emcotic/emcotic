@@ -69,7 +69,7 @@ export default function Home() {
         </div>
 
         {/* --- SECCIÓN SERVICIOS (Diseño Uniforme) --- */}
-        <div className="grid md:grid-cols-3 gap-8 mb-10">
+        <div className="grid md:grid-cols-3 gap-8 mb-05">
           
           <div className="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2">
             <h3 className="text-2xl font-bold mb-4 text-emcotic-blue">Gerencia de Proyectos</h3>
