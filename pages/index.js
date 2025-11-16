@@ -1,112 +1,124 @@
 // /pages/index.js
+// VERSIÓN 3.0 - WhatsApp-Ready
 
 import Head from 'next/head';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [empresa, setEmpresa] = useState('');
   const [mensaje, setMensaje] = useState('');
-  
-  const [status, setStatus] = useState(''); // 'enviando', 'exito', 'error'
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus('enviando');
 
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ nombre, email, empresa, mensaje }),
-      });
-
-      const data = await res.json();
-
-      if (res.status === 200) {
-        setStatus('exito');
-        // Limpiamos el formulario
-        setNombre('');
-        setEmail('');
-        setEmpresa('');
-        setMensaje('');
-      } else {
-        setStatus('error');
-        console.error(data.message);
-      }
-    } catch (error) {
-      setStatus('error');
-      console.error('Error de red:', error);
+    // 1. Construimos el mensaje para WhatsApp
+    let prefilledMessage = `¡Hola EMCOTIC!\n\n`;
+    prefilledMessage += `Estoy interesado en sus servicios. Por favor contáctenme.\n\n`;
+    prefilledMessage += `Nombre: ${nombre}\n`;
+    prefilledMessage += `Email: ${email}\n`;
+    if (empresa) {
+      prefilledMessage += `Empresa: ${empresa}\n`;
     }
+    prefilledMessage += `Mensaje: ${mensaje}\n`;
+
+    // 2. Codificamos el mensaje para una URL
+    const encodedMessage = encodeURIComponent(prefilledMessage);
+    
+    // 3. Tu número de WhatsApp (sin el '+')
+    const phoneNumber = '573175103393'; 
+
+    // 4. Creamos la URL final
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    
+    // 5. Abrimos WhatsApp en una nueva pestaña
+    window.open(whatsappURL, '_blank');
+    
+    // 6. Limpiamos el formulario
+    setNombre(''); setEmail(''); setEmpresa(''); setMensaje('');
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white p-4">
+    // Fondo blanco limpio, fuente 'Inter' (font-sans)
+    <div className="flex flex-col items-center min-h-screen bg-white text-gray-800 font-sans p-4">
       <Head>
-        <title>EMCOTIC S.A.S - Innovación y Gestión de Proyectos</title>
-        <meta name="description" content="Convertimos proyectos de innovación en realidades rentables y seguras." />
+        <title>EMCOTIC S.A.S - Gerencia de Proyectos e Innovación Legal-Tech</title>
+        <meta name="description" content="Sinergia experta en Gestión de Proyectos, Derecho Tecnológico y Desarrollo." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-full max-w-4xl mx-auto text-center">
-        {/* Aquí puedes poner tu logo */}
-        <img src="/logoprincipal.png" alt="EMCOTIC Logo" className="w-48 mx-auto mb-8" />
-        
-        <h1 className="text-4xl md:text-6xl font-bold text-cyan-400 mb-4">
-          EMCOTIC S.A.S
-        </h1>
+      <main className="w-full max-w-5xl mx-auto px-4">
+        {/* --- SECCIÓN HERO --- */}
+        <div className="flex flex-col items-center text-center py-20 md:py-32">
+          
+          {/* Logo (Más grande, sin título de texto, y con prioridad de carga) */}
+          <Image 
+            src="/logoprincipal.png" 
+            alt="EMCOTIC Logo" 
+            width={256}  // Más grande (era 192)
+            height={256} // Asumiendo que es cuadrado, ajusta si no
+            className="mb-12" // Más margen inferior
+            priority 
+          />
+          
+          {/* Título de texto ELIMINADO */}
 
-        <p className="text-xl md:text-2xl text-gray-300 mb-12">
-          Convertimos Proyectos de Innovación en Realidades Rentables y Seguras.
-        </p>
+          <p className="text-xl md:text-2xl text-gray-600 mb-12 max-w-2xl">
+            Sinergia experta en <span className="text-emcotic-blue font-semibold">Gerencia de Proyectos</span>, <span className="text-emcotic-blue font-semibold">Derecho Tecnológico</span> e <span className="text-emcotic-blue font-semibold">Innovación</span>.
+          </p>
+        </div>
 
-        {/* Sección de Pilares */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          <div className="bg-gray-800 p-6 rounded-lg">
-            <h3 className="text-2xl font-bold mb-2 text-cyan-400">Gerencia de Proyectos</h3>
-            <p className="text-gray-400">Formulación y ejecución de proyectos I+D+i bajo metodologías ágiles y PMI.</p>
+        {/* --- SECCIÓN SERVICIOS --- */}
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
+          
+          <div className="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2">
+            <h3 className="text-2xl font-bold mb-4 text-emcotic-blue">Gerencia de Proyectos</h3>
+            <p className="text-gray-700">Formulación y ejecución de proyectos I+D+i bajo metodologías ágiles y PMI. Maximizamos tu ROI y aseguramos el éxito.</p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg">
-            <h3 className="text-2xl font-bold mb-2 text-cyan-400">Consultoría Legal-Tech</h3>
-            <p className="text-gray-400">Protegemos tu innovación: Propiedad Intelectual, Contratos y Derecho de Autor.</p>
+          
+          <div className="bg-emcotic-blue p-8 rounded-lg shadow-xl text-white transition-transform duration-300 hover:-translate-y-2">
+            <h3 className="text-2xl font-bold mb-4 text-emcotic-cyan">Consultoría Legal-Tech</h3>
+            <p className="opacity-90">Protegemos tu innovación: Propiedad Intelectual, Contratos y Derecho de Autor. La armadura legal de tus activos digitales.</p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-lg">
-            <h3 className="text-2xl font-bold mb-2 text-cyan-400">Desarrollo y Optimización</h3>
-            <p className="text-gray-400">E-learning, Machine Learning y optimización de procesos empresariales.</p>
+          
+          <div className="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2">
+            <h3 className="text-2xl font-bold mb-4 text-emcotic-blue">Desarrollo y Optimización</h3>
+            <p className="text-gray-700">E-learning, Machine Learning y optimización de procesos. Convertimos datos en decisiones y procesos en ventajas competitivas.</p>
           </div>
         </div>
 
-        {/* Formulario de Contacto */}
-        <div className="bg-gray-800 p-8 rounded-lg max-w-lg mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-white">Contáctanos</h2>
-          <p className="text-gray-400 mb-6">¿Listo para escalar tu proyecto? Hablemos.</p>
+        {/* --- SECCIÓN CONTACTO (Ahora con WhatsApp) --- */}
+        <div className="bg-white p-8 md:p-12 rounded-lg shadow-2xl max-w-2xl mx-auto mb-20 border border-gray-200">
+          <h2 className="text-3xl font-bold mb-6 text-center text-emcotic-blue">Contáctanos</h2>
+          <p className="text-gray-600 mb-8 text-center">¿Listo para escalar tu proyecto? Hablemos.</p>
           
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <input
-              type="text"
-              placeholder="Tu Nombre *"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-              required
-              className="w-full p-3 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            />
-            <input
-              type="email"
-              placeholder="Tu Email *"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full p-3 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400"
-            />
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div className="grid md:grid-cols-2 gap-5">
+              <input
+                type="text"
+                placeholder="Tu Nombre *"
+                value={nombre}
+                onChange={(e) => setNombre(e.target.value)}
+                required
+                className="w-full p-3 rounded-md bg-gray-100 text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emcotic-cyan"
+              />
+              <input
+                type="email"
+                placeholder="Tu Email *"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full p-3 rounded-md bg-gray-100 text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emcotic-cyan"
+              />
+            </div>
             <input
               type="text"
               placeholder="Empresa (Opcional)"
               value={empresa}
               onChange={(e) => setEmpresa(e.target.value)}
-              className="w-full p-3 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              className="w-full p-3 rounded-md bg-gray-100 text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emcotic-cyan"
             />
             <textarea
               placeholder="Tu Mensaje *"
@@ -114,24 +126,22 @@ export default function Home() {
               onChange={(e) => setMensaje(e.target.value)}
               required
               rows="4"
-              className="w-full p-3 rounded bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-400"
+              className="w-full p-3 rounded-md bg-gray-100 text-gray-900 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-emcotic-cyan"
             />
             
             <button
               type="submit"
-              disabled={status === 'enviando'}
-              className="w-full p-4 font-bold rounded bg-cyan-500 hover:bg-cyan-600 transition-colors duration-300 disabled:bg-gray-500"
+              className="w-full p-4 font-bold rounded-md text-white bg-emcotic-blue hover:bg-emcotic-cyan hover:text-emcotic-blue transition-all duration-300"
             >
-              {status === 'enviando' ? 'Enviando...' : 'Enviar Mensaje'}
+              Enviar por WhatsApp
             </button>
             
-            {status === 'exito' && <p className="text-green-400 mt-4">¡Mensaje enviado con éxito!</p>}
-            {status === 'error' && <p className="text-red-400 mt-4">Hubo un error. Intenta de nuevo.</p>}
+            {/* Ya no necesitamos los mensajes de estado */}
           </form>
         </div>
       </main>
 
-      <footer className="w-full max-w-4xl mx-auto mt-16 text-center text-gray-500">
+      <footer className="w-full max-w-5xl mx-auto py-8 mt-12 text-center text-gray-500 border-t border-gray-200">
         <p>&copy; {new Date().getFullYear()} EMCOTIC S.A.S. Todos los derechos reservados.</p>
       </footer>
     </div>
