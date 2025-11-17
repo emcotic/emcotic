@@ -1,5 +1,5 @@
 // /pages/quienes-somos.js
-// VERSIÓN FINAL - Perfiles verificados y limpios
+// VERSIÓN FINAL - Perfiles con Email de Contacto
 
 import Head from 'next/head';
 import Image from 'next/image';
@@ -99,7 +99,9 @@ export default function QuienesSomos() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-emcotic-blue">Jorge Arango Castaño</h3>
-                <p className="text-emcotic-cyan font-semibold mb-3">CEO Fundador & Director de Proyectos</p>
+                <p className="text-emcotic-cyan font-semibold mb-1">CEO Fundador & Director de Proyectos</p>
+                <a href="mailto:jarangoc@emcotic.com" className="text-sm text-gray-500 hover:text-emcotic-blue mb-3 block transition-colors">jarangoc@emcotic.com</a>
+                
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                   Psicólogo y Magíster en Dirección y Gestión de Proyectos. Con más de 14 años de experiencia, ha liderado iniciativas de innovación movilizando más de COP $37 mil millones. Experto en formulación de proyectos (Regalías, MinCiencias) y metodologías ágiles.
                 </p>
@@ -119,7 +121,9 @@ export default function QuienesSomos() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-emcotic-blue">Javier Cantillo</h3>
-                <p className="text-emcotic-cyan font-semibold mb-3">Socio & Director Legal-Tech</p>
+                <p className="text-emcotic-cyan font-semibold mb-1">Socio & Director Legal-Tech</p>
+                <a href="mailto:javier.cantillo@emcotic.com" className="text-sm text-gray-500 hover:text-emcotic-blue mb-3 block transition-colors">javier.cantillo@emcotic.com</a>
+
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                   Abogado y Magíster en Derecho. Especialista en Derecho Contractual y nuevas tecnologías con más de 20 años de experiencia. Referente en Propiedad Intelectual y estructuración legal para Startups y emprendimientos digitales.
                 </p>
@@ -139,7 +143,9 @@ export default function QuienesSomos() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-emcotic-blue">Anasaria Vargas Calderón</h3>
-                <p className="text-emcotic-cyan font-semibold mb-3">Directora Financiera y Contable</p>
+                <p className="text-emcotic-cyan font-semibold mb-1">Directora Financiera y Contable</p>
+                <a href="mailto:ana.vargas@emcotic.com" className="text-sm text-gray-500 hover:text-emcotic-blue mb-3 block transition-colors">ana.vargas@emcotic.com</a>
+
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                   Contadora Pública y Especialista en Finanzas. Aporta una visión estratégica en la gestión de recursos y presupuestos públicos y privados. Su experiencia en entidades como la Gobernación y la Cámara de Comercio garantiza la solidez y transparencia financiera en cada proyecto ejecutado.
                 </p>
@@ -159,7 +165,9 @@ export default function QuienesSomos() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-emcotic-blue">Jaime Blanco Aristizábal</h3>
-                <p className="text-emcotic-cyan font-semibold mb-3">Gestor de Proyectos Senior</p>
+                <p className="text-emcotic-cyan font-semibold mb-1">Gestor de Proyectos Senior</p>
+                <a href="mailto:jaime.blanco@emcotic.com" className="text-sm text-gray-500 hover:text-emcotic-blue mb-3 block transition-colors">jaime.blanco@emcotic.com</a>
+
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
                   Ingeniero Civil y Especialista en Gerencia Integral de Obras. Cuenta con una amplia trayectoria en el sector público y privado, liderando planes de desarrollo económico y social. Su experiencia asegura la viabilidad técnica y la ejecución eficiente de proyectos de gran envergadura.
                 </p>
