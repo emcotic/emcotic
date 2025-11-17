@@ -1,5 +1,5 @@
 // /pages/quienes-somos.js
-// VERSIÓN ACTUALIZADA - Equipo Completo (4 Perfiles)
+// VERSIÓN FINAL - Perfiles verificados y limpios
 
 import Head from 'next/head';
 import Image from 'next/image';
@@ -141,7 +141,7 @@ export default function QuienesSomos() {
                 <h3 className="text-2xl font-bold text-emcotic-blue">Anasaria Vargas Calderón</h3>
                 <p className="text-emcotic-cyan font-semibold mb-3">Directora Financiera y Contable</p>
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                  Contadora Pública y Especialista en Finanzas. Aporta una visión estratégica en la gestión de recursos y presupuestos públicos y privados[cite: 134, 191]. Su experiencia en entidades como la Gobernación y la Cámara de Comercio [cite: 169, 177] garantiza la solidez y transparencia financiera en cada proyecto ejecutado.
+                  Contadora Pública y Especialista en Finanzas. Aporta una visión estratégica en la gestión de recursos y presupuestos públicos y privados. Su experiencia en entidades como la Gobernación y la Cámara de Comercio garantiza la solidez y transparencia financiera en cada proyecto ejecutado.
                 </p>
                 <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                   <span className="bg-blue-50 text-emcotic-blue px-3 py-1 rounded-full text-xs font-semibold">Finanzas Corporativas</span>
@@ -161,7 +161,7 @@ export default function QuienesSomos() {
                 <h3 className="text-2xl font-bold text-emcotic-blue">Jaime Blanco Aristizábal</h3>
                 <p className="text-emcotic-cyan font-semibold mb-3">Gestor de Proyectos Senior</p>
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                  Ingeniero Civil y Especialista en Gerencia Integral de Obras. Cuenta con una amplia trayectoria en el sector público y privado, liderando planes de desarrollo económico y social[cite: 788, 795]. Su experiencia asegura la viabilidad técnica y la ejecución eficiente de proyectos de gran envergadura.
+                  Ingeniero Civil y Especialista en Gerencia Integral de Obras. Cuenta con una amplia trayectoria en el sector público y privado, liderando planes de desarrollo económico y social. Su experiencia asegura la viabilidad técnica y la ejecución eficiente de proyectos de gran envergadura.
                 </p>
                 <div className="flex flex-wrap gap-2 justify-center md:justify-start">
                   <span className="bg-blue-50 text-emcotic-blue px-3 py-1 rounded-full text-xs font-semibold">Gerencia Integral</span>
