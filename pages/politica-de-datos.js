@@ -1,5 +1,5 @@
 // /pages/politica-de-datos.js
-// VERSIÓN 2 (Corregida - Sin plugin 'prose')
+// VERSIÓN 3 (Error de sintaxis </f> corregido)
 
 import Head from 'next/head';
 import Link from 'next/link';
@@ -141,7 +141,7 @@ export default function PoliticaDeDatos() {
           <Section title="8. Tratamiento de Cookies">
             <p>
               Este sitio web utiliza cookies (propias y de terceros) para mejorar la experiencia del usuario, facilitar la navegación y analizar el tráfico. Al continuar navegando en nuestro sitio, usted acepta el uso de estas cookies. Para más información, puede gestionar sus preferencias en su navegador.
-            </f>
+            </p> {/* <-- ¡CORREGIDO! --> */}
           </Section>
 
           <Section title="9. Transferencia Internacional de Datos">
