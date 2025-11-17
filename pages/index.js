@@ -1,5 +1,5 @@
 // /pages/index.js
-// VERSIÓN 5.0 - Ajuste Fino de Espaciado (Proporción Visual)
+// VERSIÓN 6.0 - Espaciado Superior Optimizado (Header <-> Logo)
 
 import Head from 'next/head';
 import { useState } from 'react';
@@ -32,9 +32,9 @@ export default function Home() {
 
       <main className="w-full max-w-5xl mx-auto px-4">
         
-        {/* --- SECCIÓN HERO (Ajustada) --- */}
-        {/* CAMBIO 1: Reduje py-32 a pt-20 pb-10. Quitamos espacio abajo. */}
-        <div className="flex flex-col items-center text-center pt-20 pb-10 md:pt-32 md:pb-12">
+        {/* --- SECCIÓN HERO (Compacta) --- */}
+        {/* CAMBIO AQUI: pt-10 (antes 20) y md:pt-16 (antes 32) */}
+        <div className="flex flex-col items-center text-center pt-10 pb-10 md:pt-16 md:pb-12">
           
           <Image 
             src="/logoprincipal.png" 
@@ -45,7 +45,6 @@ export default function Home() {
             priority 
           />
           
-          {/* CAMBIO 2: Reduje el margen del texto de mb-12 a mb-8 */}
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl">
             Sinergia experta en <span className="text-emcotic-blue font-semibold">Gerencia de Proyectos</span>, <span className="text-emcotic-blue font-semibold">Derecho Tecnológico</span> e <span className="text-emcotic-blue font-semibold">Innovación</span>.
           </p>
@@ -70,8 +69,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* --- SECCIÓN CONTACTO (Ajustada) --- */}
-        {/* CAMBIO 3: Agregué mt-24 (Margin Top 24) para forzar la separación con los servicios */}
+        {/* --- SECCIÓN CONTACTO --- */}
         <div className="bg-white p-8 md:p-12 rounded-lg shadow-2xl max-w-2xl mx-auto mt-24 mb-20 border border-gray-200">
           <h2 className="text-3xl font-bold mb-6 text-center text-emcotic-blue">Contáctanos</h2>
           <p className="text-gray-600 mb-8 text-center">¿Listo para escalar tu proyecto? Hablemos.</p>
