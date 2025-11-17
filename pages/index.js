@@ -1,7 +1,8 @@
 // /pages/index.js
-// VERSIÓN 6.0 - Espaciado Superior Optimizado (Header <-> Logo)
+// VERSIÓN 7.0 - Footer Legal Completo
 
 import Head from 'next/head';
+import Link from 'next/link'; // IMPORTANTE: Nueva importación para el enlace
 import { useState } from 'react';
 import Image from 'next/image';
 
@@ -33,9 +34,7 @@ export default function Home() {
       <main className="w-full max-w-5xl mx-auto px-4">
         
         {/* --- SECCIÓN HERO (Compacta) --- */}
-        {/* CAMBIO AQUI: pt-10 (antes 20) y md:pt-16 (antes 32) */}
         <div className="flex flex-col items-center text-center pt-10 pb-10 md:pt-16 md:pb-12">
-          
           <Image 
             src="/logoprincipal.png" 
             alt="EMCOTIC Logo" 
@@ -44,7 +43,6 @@ export default function Home() {
             className="mb-10" 
             priority 
           />
-          
           <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl">
             Sinergia experta en <span className="text-emcotic-blue font-semibold">Gerencia de Proyectos</span>, <span className="text-emcotic-blue font-semibold">Derecho Tecnológico</span> e <span className="text-emcotic-blue font-semibold">Innovación</span>.
           </p>
@@ -52,17 +50,14 @@ export default function Home() {
 
         {/* --- SECCIÓN SERVICIOS --- */}
         <div className="grid md:grid-cols-3 gap-8">
-          
           <div className="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2">
             <h3 className="text-2xl font-bold mb-4 text-emcotic-blue">Gerencia de Proyectos</h3>
             <p className="text-gray-700">Formulación y ejecución de proyectos I+D+i bajo metodologías ágiles y PMI. Maximizamos tu ROI y aseguramos el éxito.</p>
           </div>
-          
           <div className="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2">
             <h3 className="text-2xl font-bold mb-4 text-emcotic-blue">Consultoría Legal-Tech</h3>
             <p className="text-gray-700">Protegemos tu innovación: Propiedad Intelectual, Contratos y Derecho de Autor. La armadura legal de tus activos digitales.</p>
           </div>
-          
           <div className="bg-gray-50 p-8 rounded-lg shadow-lg border border-gray-200 transition-transform duration-300 hover:-translate-y-2">
             <h3 className="text-2xl font-bold mb-4 text-emcotic-blue">Desarrollo y Optimización</h3>
             <p className="text-gray-700">E-learning, Machine Learning y optimización de procesos. Convertimos datos en decisiones y procesos en ventajas competitivas.</p>
@@ -119,8 +114,17 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="w-full max-w-5xl mx-auto py-8 mt-12 text-center text-gray-500 border-t border-gray-200">
-        <p>&copy; {new Date().getFullYear()} EMCOTIC S.A.S. Todos los derechos reservados.</p>
+      {/* --- FOOTER ACTUALIZADO --- */}
+      <footer className="w-full max-w-5xl mx-auto py-8 mt-12 text-center text-gray-500 border-t border-gray-200 text-sm">
+        <p className="flex flex-col md:flex-row justify-center items-center gap-2">
+          <span>&copy; {new Date().getFullYear()} EMCOTIC S.A.S. Todos los derechos reservados.</span>
+          <span className="hidden md:inline">|</span>
+          <Link href="/politica-de-datos">
+            <a className="hover:text-emcotic-blue hover:underline transition-colors">
+              Política de Tratamiento de Datos
+            </a>
+          </Link>
+        </p>
       </footer>
     </div>
   );
