@@ -1,5 +1,5 @@
 // /pages/politica-de-datos.js
-// VERSIÓN 3 (Error de sintaxis </f> corregido)
+// VERSIÓN 4 (Error de sintaxis </f> corregido Y dirección de notificación actualizada)
 
 import Head from 'next/head';
 import Link from 'next/link';
@@ -47,8 +47,9 @@ export default function PoliticaDeDatos() {
             <p>
               <strong>Domicilio Principal:</strong> Barranquilla, Atlántico, Colombia
             </p>
+            {/* --- CAMBIO REALIZADO AQUÍ --- */}
             <p>
-              <strong>Dirección Domicilio Principal:</strong> CRA 55 # 100 OFICINA 613, CENTRO EMPRESARIAL BLUE GARDENS
+              <strong>Dirección notificaciones judiciales:</strong> Calle 2A # 20 - 70. T3 Of 107., Puerto Colombia - Atlántico.
             </p>
             <p>
               <strong>Correo Electrónico de Contacto:</strong> jarangoc@emcotic.com
@@ -116,8 +117,9 @@ export default function PoliticaDeDatos() {
               <li>
                 <strong>Correo Electrónico:</strong> Enviando su solicitud a <strong>jarangoc@emcotic.com</strong>.
               </li>
+              {/* --- CAMBIO REALIZADO AQUÍ --- */}
               <li>
-                <strong>Comunicación Escrita:</strong> Radicando su solicitud en la dirección <strong>CRA 55 # 100 OFICINA 613, CENTRO EMPRESARIAL BLUE GARDENS, en Barranquilla</strong>.
+                <strong>Comunicación Escrita:</strong> Radicando su solicitud en la <strong>Dirección notificaciones judiciales: Calle 2A # 20 - 70. T3 Of 107., Puerto Colombia - Atlántico.</strong>
               </li>
             </ul>
             <p className="mt-4">
@@ -141,7 +143,7 @@ export default function PoliticaDeDatos() {
           <Section title="8. Tratamiento de Cookies">
             <p>
               Este sitio web utiliza cookies (propias y de terceros) para mejorar la experiencia del usuario, facilitar la navegación y analizar el tráfico. Al continuar navegando en nuestro sitio, usted acepta el uso de estas cookies. Para más información, puede gestionar sus preferencias en su navegador.
-            </p> {/* <-- ¡CORREGIDO! --> */}
+            </p> {/* <-- Error de tipeo corregido --> */}
           </Section>
 
           <Section title="9. Transferencia Internacional de Datos">
