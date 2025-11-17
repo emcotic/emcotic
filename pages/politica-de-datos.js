@@ -1,4 +1,5 @@
 // /pages/politica-de-datos.js
+// VERSIÓN 2 (Corregida - Sin plugin 'prose')
 
 import Head from 'next/head';
 import Link from 'next/link';
@@ -7,7 +8,10 @@ import Link from 'next/link';
 const Section = ({ title, children }) => (
   <section className="mb-8">
     <h2 className="text-2xl font-bold text-emcotic-blue mt-6 mb-4">{title}</h2>
-    <div className="space-y-4">{children}</div>
+    {/* Clases estándar para un texto legible */}
+    <div className="space-y-4 text-gray-700 text-lg leading-relaxed"> 
+      {children}
+    </div>
   </section>
 );
 
@@ -28,7 +32,8 @@ export default function PoliticaDeDatos() {
           </p>
         </header>
 
-        <div className="prose prose-lg max-w-none">
+        {/* Contenedor principal del texto */}
+        <div>
           <Section title="1. Identificación del Responsable del Tratamiento">
             <p>
               <strong>Razón Social:</strong> EMPRESA CONSULTORA EN TECNOLOGIA INFORMATICA DE LA COMUNICACION INVESTIGACION Y DESARROLLO S.A.S. EMCOTIC S.A.S.
@@ -63,7 +68,7 @@ export default function PoliticaDeDatos() {
             <p>
               EMCOTIC S.A.S. aplicará los siguientes principios en el tratamiento de datos personales:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="list-disc pl-6 space-y-2">
               <li><strong>Principio de Legalidad:</strong> El tratamiento de datos se sujetará a las disposiciones legales vigentes.</li>
               <li><strong>Principio de Finalidad:</strong> El tratamiento obedecerá a una finalidad legítima, informada al Titular.</li>
               <li><strong>Principio de Libertad:</strong> El tratamiento solo se ejercerá con el consentimiento previo, expreso e informado del Titular.</li>
@@ -79,7 +84,7 @@ export default function PoliticaDeDatos() {
             <p>
               EMCOTIC S.A.S. tratará sus datos personales para las siguientes finalidades, derivadas de nuestro objeto social:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="list-disc pl-6 space-y-2">
               <li><strong>Gestión de Clientes y Proyectos:</strong> Contactar a clientes actuales o potenciales, gestionar cotizaciones, proveer los servicios de consultoría, desarrollo tecnológico, e-learning, machine learning, propiedad intelectual y formulación de proyectos.</li>
               <li><strong>Comunicaciones y Mercadeo:</strong> Enviar información sobre nuestros servicios, eventos (como ruedas de negocios), alianzas estratégicas, publicidad y novedades que consideremos de su interés.</li>
               <li><strong>Gestión Contractual:</strong> Cumplir con las obligaciones contractuales y legales derivadas de la relación comercial o laboral.</li>
@@ -93,7 +98,7 @@ export default function PoliticaDeDatos() {
             <p>
               De conformidad con la Ley 1581 de 2012, usted como Titular de los datos tiene derecho a:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="list-disc pl-6 space-y-2">
               <li><strong>Conocer, Actualizar y Rectificar</strong> sus datos personales.</li>
               <li><strong>Solicitar Prueba de la Autorización</strong> otorgada para el tratamiento.</li>
               <li><strong>Ser Informado</strong> sobre el uso que se ha dado a sus datos.</li>
@@ -107,7 +112,7 @@ export default function PoliticaDeDatos() {
             <p>
               Para el ejercicio de sus derechos de Habeas Data, el Titular podrá contactar a EMCOTIC S.A.S. a través de los siguientes canales:
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="list-disc pl-6 space-y-2">
               <li>
                 <strong>Correo Electrónico:</strong> Enviando su solicitud a <strong>jarangoc@emcotic.com</strong>.
               </li>
@@ -115,13 +120,51 @@ export default function PoliticaDeDatos() {
                 <strong>Comunicación Escrita:</strong> Radicando su solicitud en la dirección <strong>CRA 55 # 100 OFICINA 613, CENTRO EMPRESARIAL BLUE GARDENS, en Barranquilla</strong>.
               </li>
             </ul>
-            <p>
+            <p className="mt-4">
               Su solicitud (PQR) deberá contener, como mínimo, la identificación del Titular, la descripción de los hechos que dan lugar a la solicitud y los datos de contacto.
             </p>
-            <p>
+            <p className="mt-4">
               <strong>Tiempos de Respuesta:</strong>
             </p>
-            <ul className="list-disc pl-5 space-y-2">
+            <ul className="list-disc pl-6 space-y-2">
               <li><strong>Consultas:</strong> Se atenderán en un término máximo de diez (10) días hábiles.</li>
               <li><strong>Reclamos (Rectificación, Supresión, etc.):</strong> Se atenderán en un término máximo de quince (15) días hábiles.</li>
             </ul>
+          </Section>
+
+          <Section title="7. Seguridad de la Información">
+            <p>
+              EMCOTIC S.A.S. ha adoptado y mantendrá las medidas técnicas, humanas y administrativas necesarias para proteger la seguridad de sus bases de datos y la confidencialidad de la información, previniendo el acceso no autorizado, adulteración, pérdida o consulta.
+            </p>
+          </Section>
+
+          <Section title="8. Tratamiento de Cookies">
+            <p>
+              Este sitio web utiliza cookies (propias y de terceros) para mejorar la experiencia del usuario, facilitar la navegación y analizar el tráfico. Al continuar navegando en nuestro sitio, usted acepta el uso de estas cookies. Para más información, puede gestionar sus preferencias en su navegador.
+            </f>
+          </Section>
+
+          <Section title="9. Transferencia Internacional de Datos">
+            <p>
+              Es posible que EMCOTIC S.A.S. utilice proveedores de servicios (como Vercel para el hosting, Google Workspace, o herramientas de CRM) ubicados fuera de Colombia. Al aceptar esta política, el Titular autoriza expresamente la transferencia y transmisión internacional de sus datos a dichos proveedores, en el entendido de que EMCOTIC S.A.S. ha verificado que estos ofrecen estándares de protección de datos adecuados y equivalentes a los exigidos por la ley colombiana.
+            </p>
+          </Section>
+
+          <Section title="10. Vigencia de la Política">
+            <p>
+              La presente Política de Tratamiento de Datos Personales rige a partir del 16 de noviembre de 2025. EMCOTIC S.A.S. se reserva el derecho de modificarla en cualquier momento. Cualquier cambio será informado y publicado oportunamente en este sitio web.
+            </p>
+          </Section>
+
+          <div className="text-center mt-12">
+            <Link href="/">
+              <a className="text-emcotic-blue hover:text-emcotic-cyan font-bold text-lg">
+                &larr; Volver al Inicio
+              </a>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
