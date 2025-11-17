@@ -143,7 +143,7 @@ export default function QuienesSomos() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-emcotic-blue">Anasaria Vargas Calderón</h3>
-                <p className="text-emcotic-cyan font-semibold mb-1">Directora Financiera y Contable</p>
+                <p className="text-emcotic-cyan font-semibold mb-1"> <Socia & Directora Financiera y Contable</p>
                 <a href="mailto:ana.vargas@emcotic.com" className="text-sm text-gray-500 hover:text-emcotic-blue mb-3 block transition-colors">ana.vargas@emcotic.com</a>
 
                 <p className="text-gray-600 mb-4 text-sm leading-relaxed">
