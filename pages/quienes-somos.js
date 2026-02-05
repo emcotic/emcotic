@@ -138,7 +138,7 @@ export default function QuienesSomos() {
             <div className="flex flex-col items-center text-center md:text-left md:flex-row md:items-start gap-6">
               <div className="flex-shrink-0">
                 <div className="w-40 h-40 rounded-full bg-gray-200 overflow-hidden border-4 border-white shadow-lg mx-auto relative">
-                   <Image src="/anav.png" alt="Anasaria Vargas" layout="fill" objectFit="cover" />
+                   <Image src="/AnaV.jpg" alt="Anasaria Vargas" layout="fill" objectFit="cover" />
                 </div>
               </div>
               <div>
